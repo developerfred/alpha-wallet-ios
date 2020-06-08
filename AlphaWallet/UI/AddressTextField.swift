@@ -267,7 +267,7 @@ class AddressTextField: UIControl {
 
                 self.errorState = .none
                 self.ensAddressLabel.isHidden = false
-                self.ensAddressLabel.text = address.address
+                self.ensAddressLabel.text = AlphaWallet.Address(address: address).truncateMiddle
 
                 self.delegate?.didPaste(in: self)
             }
@@ -294,7 +294,7 @@ class AddressTextField: UIControl {
 
                 guard oldTextValue == strongSelf.textField.text?.trimmed else { return }
                 strongSelf.ensAddressLabel.isHidden = false
-                strongSelf.ensAddressLabel.text = address.address
+                strongSelf.ensAddressLabel.text = AlphaWallet.Address(address: address).truncateMiddle
             }
         }
     }
